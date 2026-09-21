@@ -74,18 +74,21 @@ const DataTableCell = ({
   numeric,
   maxFontSizeMultiplier,
   testID,
+  theme: themeOverrides,
   ...rest
 }: Props) => {
   return (
     <TouchableRipple
       {...rest}
       testID={testID}
+      theme={themeOverrides}
       style={[styles.container, numeric && styles.right, style]}
     >
       <CellContent
         textStyle={textStyle}
         testID={testID}
         maxFontSizeMultiplier={maxFontSizeMultiplier}
+        theme={themeOverrides}
       >
         {children}
       </CellContent>
@@ -98,9 +101,10 @@ const CellContent = ({
   textStyle,
   maxFontSizeMultiplier,
   testID,
+  theme,
 }: Pick<
   Props,
-  'children' | 'textStyle' | 'testID' | 'maxFontSizeMultiplier'
+  'children' | 'textStyle' | 'testID' | 'maxFontSizeMultiplier' | 'theme'
 >) => {
   if (React.isValidElement(children)) {
     return children;
@@ -113,6 +117,7 @@ const CellContent = ({
       numberOfLines={1}
       maxFontSizeMultiplier={maxFontSizeMultiplier}
       testID={`${testID}-text-container`}
+      theme={theme}
     >
       {children}
     </Text>

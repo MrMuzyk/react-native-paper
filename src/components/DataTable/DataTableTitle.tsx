@@ -145,6 +145,7 @@ const DataTableTitle = ({
 
       <Text
         variant="labelMedium"
+        theme={themeOverrides}
         style={[
           styles.cell,
           // height must scale with numberOfLines

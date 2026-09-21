@@ -299,6 +299,7 @@ const DataTablePagination = ({
           >
             <Text
               variant="bodySmall"
+              theme={themeOverrides}
               style={[styles.label, { color: labelColor }]}
               numberOfLines={3}
               testID="select-page-dropdown-label"
@@ -319,6 +320,7 @@ const DataTablePagination = ({
         )}
       <Text
         variant="bodySmall"
+        theme={themeOverrides}
         style={[styles.label, { color: labelColor }]}
         numberOfLines={3}
         aria-label={accessibilityLabel || 'label'}
