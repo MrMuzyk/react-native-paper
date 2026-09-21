@@ -62,10 +62,8 @@ const AvatarText = ({
   ...rest
 }: Props) => {
   const theme = useInternalTheme(themeOverrides);
-  const { backgroundColor, ...restStyle } = StyleSheet.flatten(style) || {};
   const { background, textColor } = resolveAvatarColors({
     theme,
-    backgroundColor,
     color: customColor,
   });
   const { fontScale } = useWindowDimensions();
@@ -80,7 +78,7 @@ const AvatarText = ({
           backgroundColor: background,
         },
         styles.container,
-        restStyle,
+        style ?? {},
       ]}
       {...rest}
     >

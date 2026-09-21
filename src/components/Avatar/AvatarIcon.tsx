@@ -46,14 +46,13 @@ const Avatar = ({
   size = DEFAULT_SIZE,
   style,
   theme: themeOverrides,
+  color: customColor,
   ...rest
 }: Props) => {
   const theme = useInternalTheme(themeOverrides);
-  const { backgroundColor, ...restStyle } = StyleSheet.flatten(style) || {};
   const { background, textColor } = resolveAvatarColors({
     theme,
-    backgroundColor,
-    color: rest.color,
+    color: customColor,
   });
 
   return (
@@ -66,7 +65,7 @@ const Avatar = ({
           backgroundColor: background,
         },
         styles.container,
-        restStyle,
+        style ?? {},
       ]}
       {...rest}
     >

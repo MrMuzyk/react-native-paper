@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, View } from 'react-native';
 import type {
   ImageProps,
   ImageSourcePropType,
@@ -88,8 +88,7 @@ const AvatarImage = ({
   ...rest
 }: Props) => {
   const theme = useInternalTheme(themeOverrides);
-  const { backgroundColor } = StyleSheet.flatten(style) || {};
-  const { background } = resolveAvatarColors({ theme, backgroundColor });
+  const { background } = resolveAvatarColors({ theme });
 
   return (
     <View
