@@ -165,8 +165,6 @@ describe('animations', () => {
         Text
       </Banner>
     );
-    // A disabled animation scale settles within a frame instead of taking the
-    // full `motion.duration.medium1`.
     await act(() => {
       jest.advanceTimersByTime(16);
     });
