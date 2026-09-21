@@ -86,7 +86,6 @@ const DataTableCell = ({
     >
       <CellContent
         textStyle={textStyle}
-        testID={testID}
         maxFontSizeMultiplier={maxFontSizeMultiplier}
         theme={themeOverrides}
       >
@@ -100,11 +99,10 @@ const CellContent = ({
   children,
   textStyle,
   maxFontSizeMultiplier,
-  testID,
   theme,
 }: Pick<
   Props,
-  'children' | 'textStyle' | 'testID' | 'maxFontSizeMultiplier' | 'theme'
+  'children' | 'textStyle' | 'maxFontSizeMultiplier' | 'theme'
 >) => {
   if (React.isValidElement(children)) {
     return children;
@@ -116,7 +114,6 @@ const CellContent = ({
       style={textStyle}
       numberOfLines={1}
       maxFontSizeMultiplier={maxFontSizeMultiplier}
-      testID={`${testID}-text-container`}
       theme={theme}
     >
       {children}
